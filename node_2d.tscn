@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://4wo6dd6vi88v"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(1335, 766)
+format = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(222.308, 122.603)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(290.669, 170.594)
