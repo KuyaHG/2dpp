@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://4wo6dd6vi88v"]
+[gd_scene load_steps=2 format=3 uid="uid://4wo6dd6vi88v"]
+
+[ext_resource type="Texture2D" uid="uid://deyiygo8rxadv" path="res://sr2a7b2468de7aws3.png" id="1_ygmvj"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -7,7 +9,6 @@ position = Vector2(1335, 766)
 format = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(222.308, 122.603)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(290.669, 170.594)
+position = Vector2(288.693, 204.401)
+scale = Vector2(0.0579796, 0.056866)
+texture = ExtResource("1_ygmvj")
