@@ -1,0 +1,1 @@
+Is Stryker and OPP???
