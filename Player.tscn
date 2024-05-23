@@ -26,3 +26,5 @@ position = Vector2(300, 175)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_563xw")
 animation = &"Front"
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
