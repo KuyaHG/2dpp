@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cymhj8cra7mf"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_i30x2"]
+[ext_resource type="Texture2D" uid="uid://deyiygo8rxadv" path="res://sr2a7b2468de7aws3.png" id="2_sh7el"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycfiw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sh7el")
+}],
+"loop": true,
+"name": &"Front",
+"speed": 5.0
+}]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_75ym3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_i30x2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
+position = Vector2(300, 175)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_ycfiw")
+animation = &"Front"
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(301, 281)
+shape = SubResource("WorldBoundaryShape2D_75ym3")
