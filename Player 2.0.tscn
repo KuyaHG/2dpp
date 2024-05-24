@@ -1,26 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://q2a0pqftgabt"]
+[gd_scene load_steps=5 format=3 uid="uid://q2a0pqftgabt"]
 
 [ext_resource type="Script" path="res://Player .0.gd" id="1_8gyra"]
-[ext_resource type="Texture2D" uid="uid://cqwpxr35f84vd" path="res://pixil-frame-0 (2).png" id="1_j5xmn"]
 [ext_resource type="Texture2D" uid="uid://bn2hrr18lxp4b" path="res://pixil-frame-0.png" id="2_ox0tb"]
-[ext_resource type="Texture2D" uid="uid://b34st28f1qb84" path="res://pixil-frame-0 (1).png" id="3_53j8q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wem2o"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_j5xmn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_ox0tb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_53j8q")
-}],
-"loop": true,
-"name": &"Bounce Right",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_ox0tb")
@@ -41,8 +25,6 @@ script = ExtResource("1_8gyra")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
 sprite_frames = SubResource("SpriteFrames_wem2o")
-animation = &"Bounce Right"
-frame_progress = 0.692074
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(316, 233)
