@@ -22,6 +22,7 @@ animations = [{
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 5
 position = Vector2(300, 175)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_563xw")
