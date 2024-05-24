@@ -2,7 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bw54wnqs1x1fh" path="res://tiles 1-3.png" id="1_crc6o"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vosoc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1q5c4"]
+resource_name = "World Build So Far"
 texture = ExtResource("1_crc6o")
 texture_region_size = Vector2i(72, 72)
 0:0/0 = 0
@@ -11,7 +12,7 @@ texture_region_size = Vector2i(72, 72)
 
 [sub_resource type="TileSet" id="TileSet_17c2k"]
 tile_size = Vector2i(72, 72)
-sources/0 = SubResource("TileSetAtlasSource_vosoc")
+sources/1 = SubResource("TileSetAtlasSource_1q5c4")
 
 [node name="Background" type="CanvasLayer"]
 layer = -1
