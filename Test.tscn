@@ -1,23 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw7k5whlc2iw7"]
+[gd_scene load_steps=5 format=3 uid="uid://cw7k5whlc2iw7"]
 
 [ext_resource type="PackedScene" uid="uid://q2a0pqftgabt" path="res://Player 2.0.tscn" id="1_dy3gg"]
+[ext_resource type="Texture2D" uid="uid://bw54wnqs1x1fh" path="res://tiles 1-3.png" id="2_xlewf"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vnv0l"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r6xoc"]
+texture = ExtResource("2_xlewf")
+texture_region_size = Vector2i(72, 72)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_thwfo"]
+[sub_resource type="TileSet" id="TileSet_30al8"]
+tile_size = Vector2i(72, 72)
+sources/0 = SubResource("TileSetAtlasSource_r6xoc")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(10, 10)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-scale = Vector2(100, 100)
-physics_material_override = SubResource("PhysicsMaterial_vnv0l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-scale = Vector2(0.05, 0.05)
-shape = SubResource("WorldBoundaryShape2D_thwfo")
-
 [node name="Player" parent="." instance=ExtResource("1_dy3gg")]
 position = Vector2(-15, -25)
+scale = Vector2(0.09, 0.09)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(166.667, 277.778)
+scale = Vector2(111.111, 111.111)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-249.867, -32.0384)
+tile_set = SubResource("TileSet_30al8")
+format = 2
+layer_0/tile_data = PackedInt32Array(3, 0, 0, -65533, 0, 0, -65534, 0, 0, 2, 0, 0, -65532, 0, 0, 4, 0, 0)
