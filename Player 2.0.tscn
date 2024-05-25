@@ -27,7 +27,7 @@ z_index = 5
 sprite_frames = SubResource("SpriteFrames_wem2o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(316, 233)
+position = Vector2(3.05176e-05, 200)
 shape = SubResource("CapsuleShape2D_gtsu4")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
