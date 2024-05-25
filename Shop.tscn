@@ -1,14 +1,227 @@
-[gd_scene load_steps=2 format=3 uid="uid://cp2d6n32652ka"]
+[gd_scene load_steps=14 format=3 uid="uid://cp2d6n32652ka"]
 
+[ext_resource type="Script" path="res://Shop.gd" id="1_nfkvx"]
+[ext_resource type="Theme" uid="uid://bi3y60qv3a0us" path="res://Button.tres" id="2_vj7ns"]
 [ext_resource type="Texture2D" uid="uid://clv6xxt0380lk" path="res://Shop2.png" id="3_ex6oc"]
+[ext_resource type="PackedScene" uid="uid://q2a0pqftgabt" path="res://Player 2.0.tscn" id="4_bw30l"]
+[ext_resource type="Texture2D" uid="uid://bw54wnqs1x1fh" path="res://tiles 1-3.png" id="5_onmjr"]
+
+[sub_resource type="Animation" id="Animation_37bfy"]
+resource_name = "Fade_In"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(200000, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_22vnp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200000, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control2/shopbutton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200000, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_74wvs"]
+resource_name = "Fade_Out"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-200000, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b2o1e"]
+resource_name = "Start"
+length = 4.0
+step = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(200000, 0), Vector2(200000, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/ColorRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 3.69),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(200000, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control2/shopbutton:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2e+08, 0), Vector2(523, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_d6vt1"]
+resource_name = "ButtonPressed"
+step = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control2/shopbutton:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(523, 0), Vector2(2e+08, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_otjya"]
+_data = {
+"ButtonPressed": SubResource("Animation_d6vt1"),
+"Fade_In": SubResource("Animation_37bfy"),
+"Fade_Out": SubResource("Animation_74wvs"),
+"RESET": SubResource("Animation_22vnp"),
+"Start": SubResource("Animation_b2o1e")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7euhg"]
+texture = ExtResource("5_onmjr")
+texture_region_size = Vector2i(72, 72)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ynvva"]
+tile_size = Vector2i(72, 72)
+sources/2 = SubResource("TileSetAtlasSource_7euhg")
 
 [node name="CanvasLayer" type="CanvasLayer"]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+script = ExtResource("1_nfkvx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+process_mode = 3
+z_index = 100
 anchors_preset = -1
 anchor_right = 1.002
 anchor_bottom = 1.0
-offset_right = -0.200073
+offset_right = -0.200012
 texture = ExtResource("3_ex6oc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_otjya")
+}
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 600.0
+offset_bottom = 354.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+z_index = 100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200000.0
+offset_right = 200001.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Player" parent="." instance=ExtResource("4_bw30l")]
+
+[node name="Timer" type="Timer" parent="."]
+process_mode = 3
+one_shot = true
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ynvva")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 0, 65537, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 196612, 2, 0, 196613, 2, 0, 262150, 2, 0, 262151, 2, 0, 196615, 2, 0, 196616, 2, 0, 131080, 2, 0, 262152, 2, 0, 65544, 2, 0, 8, 2, 0, 7, 2, 0, 65543, 2, 0, 65542, 2, 0, 131078, 2, 0, 131079, 2, 0, 131077, 2, 0, 196614, 2, 0, 262149, 2, 0, 262148, 2, 0, 262147, 2, 0, 262146, 2, 0, 262145, 2, 0, 262144, 2, 0, 196608, 2, 0, 131072, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 65541, 2, 0, 65540, 2, 0, 65539, 2, 0, 65538, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0)
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchor_left = -0.016
+anchor_top = -0.025
+anchor_right = 0.018
+anchor_bottom = 0.061
+offset_left = 9.6
+offset_top = 8.75
+offset_right = 588.2
+offset_bottom = 329.65
+
+[node name="shopbutton" type="Button" parent="Control2"]
+process_mode = 3
+z_index = 2
+layout_mode = 0
+offset_left = 200000.0
+offset_right = 200080.0
+offset_bottom = 350.0
+scale = Vector2(1, 1.04141)
+theme = ExtResource("2_vj7ns")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_down" from="Control2/shopbutton" to="." method="_on_shopbutton_button_down"]

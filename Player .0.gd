@@ -8,7 +8,7 @@ func _ready():
 	
 	
 	
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("W"):
 		velocity.y = -SPEED
 	elif Input.is_action_pressed("S"):

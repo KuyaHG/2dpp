@@ -1,18 +1,13 @@
-extends Control
+extends CanvasLayer
+var timer := Timer.new()
 
-func resume():
-	get_tree().paused = false
-	$AnimationPlayer.play_backwards("blur")
+func _ready():
+	$AnimationPlayer.play("Start")
 
-func pause():
+func _on_shopbutton_button_down():
+	$AnimationPlayer.play("ButtonPressed")
+	$Timer.start()
+
+func _on_timer_timeout():
 	get_tree().paused = true
-	$AnimationPlayer.play("blur")
-
-
-func _on_shop_pressed():
-	if get_tree().paused == false:
-		pause()
-
-
-func _on_resume_pressed():
-	resume()
+	$AnimationPlayer.play("Fade_In")
