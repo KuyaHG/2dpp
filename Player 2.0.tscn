@@ -15,19 +15,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gtsu4"]
-radius = 120.0
-height = 508.0
+radius = 8.0
+height = 44.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_8gyra")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 5
 sprite_frames = SubResource("SpriteFrames_wem2o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.05176e-05, 200)
+top_level = true
+position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_gtsu4")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
