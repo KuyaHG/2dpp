@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://df1qbo2hnklsb"]
+
+[ext_resource type="Texture2D" uid="uid://dg26sd64ga0e1" path="res://Background png.png" id="1_4lhnt"]
+
+[node name="Game Background" type="CanvasLayer"]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.14441e-05, -1.14441e-05)
+scale = Vector2(2.56, 2.56)
+texture = ExtResource("1_4lhnt")

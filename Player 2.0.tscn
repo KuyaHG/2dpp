@@ -32,4 +32,6 @@ top_level = true
 position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_gtsu4")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
