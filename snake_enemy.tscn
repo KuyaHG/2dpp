@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://d35sqghi4gmxw"]
+[gd_scene load_steps=5 format=3 uid="uid://d35sqghi4gmxw"]
+
+[ext_resource type="Texture2D" uid="uid://brp5wgudhtoey" path="res://Snake animation 1.png" id="1_tx5vt"]
+[ext_resource type="Texture2D" uid="uid://bk2hlgkvgiads" path="res://Snake animation 2.png" id="2_k1tjr"]
+[ext_resource type="Script" path="res://snake_enemy.gd" id="3_nnbqg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhupj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tx5vt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k1tjr")
+}],
+"loop": true,
+"name": &"wiggle wiggle",
+"speed": 10.0
+}]
 
 [node name="Snake enemy" type="AnimatedSprite2D"]
+scale = Vector2(0.55, 0.55)
+sprite_frames = SubResource("SpriteFrames_yhupj")
+animation = &"wiggle wiggle"
+frame_progress = 0.232563
+script = ExtResource("3_nnbqg")
