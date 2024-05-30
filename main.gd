@@ -1,5 +1,30 @@
 extends Node
 @export var snake_enemy_scene:PackedScene
+#THINGS TO DO
+#Game over screen
+#Game over screen restart button
+#Snake collision with player transitions to game over
+
+#Game start screen
+#Game start button
+#Start game on start screen
+#Change game over button to start screen (not main)
+
+#Snakes are created at different positions
+
+#Snakes move towards player
+
+#Player can spawn bullets
+#Bullets move
+#Bullet leaves screen and is deleted
+#Bullet collision with snake kills snake
+#Bullet collision with snake kills bullet
+
+#Create win screen
+#Win Screen reset button transitions to start screen
+
+#When snake dies numSnakesKilled increases
+#When NumSnakesKilled==WaveNumSnakes transition to win screen
 
 var EnemiesNode
 

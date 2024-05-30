@@ -15,12 +15,13 @@ animations = [{
 }],
 "loop": true,
 "name": &"wiggle wiggle",
-"speed": 10.0
+"speed": 6.0
 }]
 
 [node name="Snake enemy" type="AnimatedSprite2D"]
-scale = Vector2(0.55, 0.55)
+position = Vector2(23.2, 23.2)
+scale = Vector2(1.275, 1.275)
 sprite_frames = SubResource("SpriteFrames_yhupj")
 animation = &"wiggle wiggle"
-frame_progress = 0.232563
+frame_progress = 0.46555
 script = ExtResource("3_nnbqg")
