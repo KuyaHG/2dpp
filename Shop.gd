@@ -2,7 +2,7 @@ extends CanvasLayer
 var timer := Timer.new()
 
 func _ready():
-	$AnimationPlayer.play("Start")
+	pass
 
 func _on_shopbutton_button_down():
 	$AnimationPlayer.play("ButtonPressed")
