@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d35sqghi4gmxw"]
+[gd_scene load_steps=6 format=3 uid="uid://d35sqghi4gmxw"]
 
 [ext_resource type="Texture2D" uid="uid://brp5wgudhtoey" path="res://Snake animation 1.png" id="1_tx5vt"]
 [ext_resource type="Texture2D" uid="uid://bk2hlgkvgiads" path="res://Snake animation 2.png" id="2_k1tjr"]
@@ -18,6 +18,10 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4y2e"]
+radius = 6.47059
+height = 44.9412
+
 [node name="Snake enemy" type="AnimatedSprite2D"]
 position = Vector2(23.2, 23.2)
 scale = Vector2(1.275, 1.275)
@@ -25,3 +29,8 @@ sprite_frames = SubResource("SpriteFrames_yhupj")
 animation = &"wiggle wiggle"
 frame_progress = 0.46555
 script = ExtResource("3_nnbqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_c4y2e")
