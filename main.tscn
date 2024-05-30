@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2q8rvq54gsad"]
+[gd_scene load_steps=4 format=3 uid="uid://d2q8rvq54gsad"]
 
 [ext_resource type="Texture2D" uid="uid://dg26sd64ga0e1" path="res://Background png.png" id="1_hsono"]
 [ext_resource type="Theme" uid="uid://dvmwhy5ik2ywx" path="res://Shop_Button.tres" id="2_ut3ia"]
+[ext_resource type="PackedScene" uid="uid://q2a0pqftgabt" path="res://Player 2.0.tscn" id="3_q61bu"]
 
 [node name="Main" type="Node"]
 
@@ -23,3 +24,7 @@ offset_right = 64.0
 offset_bottom = 208.0
 grow_vertical = 2
 theme = ExtResource("2_ut3ia")
+
+[node name="Player" parent="." instance=ExtResource("3_q61bu")]
+position = Vector2(400, 400)
+scale = Vector2(0.09, 0.09)

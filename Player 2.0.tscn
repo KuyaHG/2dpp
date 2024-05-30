@@ -15,8 +15,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gtsu4"]
-radius = 120.0
-height = 508.0
+radius = 160.0
+height = 640.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.05, 0.05)
