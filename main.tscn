@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2q8rvq54gsad"]
+[gd_scene load_steps=6 format=3 uid="uid://d2q8rvq54gsad"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bxtc3"]
 [ext_resource type="Texture2D" uid="uid://dg26sd64ga0e1" path="res://Background png.png" id="1_hsono"]
 [ext_resource type="Theme" uid="uid://dvmwhy5ik2ywx" path="res://Shop_Button.tres" id="2_ut3ia"]
+[ext_resource type="PackedScene" uid="uid://d35sqghi4gmxw" path="res://snake_enemy.tscn" id="2_w1sgl"]
 [ext_resource type="PackedScene" uid="uid://q2a0pqftgabt" path="res://Player 2.0.tscn" id="3_q61bu"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_bxtc3")
+snake_enemy_scene = ExtResource("2_w1sgl")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(400, 400)
@@ -30,4 +32,13 @@ theme = ExtResource("2_ut3ia")
 position = Vector2(400, 400)
 scale = Vector2(0.09, 0.09)
 
+[node name="Enemy_Spawn1" type="Node2D" parent="."]
+position = Vector2(800, 0)
+
+[node name="Enemy_Spawn_Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Enemies" type="Node" parent="."]
+
 [connection signal="button_down" from="UI/Shop button" to="." method="_on_shop_button_button_down"]
+[connection signal="timeout" from="Enemy_Spawn_Timer" to="." method="_on_enemy_spawn_timer_timeout"]
