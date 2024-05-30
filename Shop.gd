@@ -4,9 +4,7 @@ var timer := Timer.new()
 func _ready():
 	pass
 
-func _on_shopbutton_button_down():
-	$AnimationPlayer.play("ButtonPressed")
-	$Timer.start()
+#I deleted this in favor of putting the button in the game scene
 
 func _on_timer_timeout():
 	get_tree().paused = true
