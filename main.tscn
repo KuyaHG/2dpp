@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2q8rvq54gsad"]
+[gd_scene load_steps=12 format=3 uid="uid://d2q8rvq54gsad"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bxtc3"]
 [ext_resource type="Texture2D" uid="uid://dg26sd64ga0e1" path="res://Background png.png" id="1_hsono"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bk2hlgkvgiads" path="res://Snake animation 2.png" id="3_kggnl"]
 [ext_resource type="Script" path="res://snake_enemy.gd" id="4_0t86x"]
 [ext_resource type="PackedScene" uid="uid://i4yu2wbfroqt" path="res://player_3.tscn" id="5_w3tj6"]
+[ext_resource type="PackedScene" uid="uid://bum871p40feqg" path="res://snake_enemy.tscn" id="8_kd4qk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yhupj"]
 animations = [{
@@ -70,6 +71,8 @@ autostart = true
 [node name="Enemies" type="Node" parent="."]
 
 [node name="player 3" parent="." instance=ExtResource("5_w3tj6")]
+
+[node name="snake_enemy" parent="." instance=ExtResource("8_kd4qk")]
 
 [connection signal="button_down" from="UI/Shop button" to="." method="_on_shop_button_button_down"]
 [connection signal="timeout" from="Enemy_Spawn_Timer" to="." method="_on_enemy_spawn_timer_timeout"]

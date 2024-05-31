@@ -5,12 +5,12 @@ extends Node
 #*Game over screen restart button
 #Snake collision with player transitions to game over
 
-#Game start screen
-#Game start button
-#Start game on start screen
-#Change game over button to start screen (not main)
+#*Game start screen
+#*Game start button
+#*Start game on start screen
+#*Change game over button to start screen (not main)
 
-#Snakes are created at different positions
+#*Snakes are created at different positions --Go over with dad
 
 #Snakes move towards player
 
@@ -25,6 +25,8 @@ extends Node
 
 #When snake dies numSnakesKilled increases
 #When NumSnakesKilled==WaveNumSnakes transition to win screen
+var player_pos = get_parent().get_node("player 3")
+	
 
 var EnemiesNode
 var NumWaveEnemies
@@ -57,7 +59,7 @@ func _on_shop_button_button_down():
 func spawn_enemy():
 	print ("Spawn Snake")
 	var snake = snake_enemy_scene.instantiate()
-	snake.position = Vector2(200 + (randf() * 200), 100 + (randf() * 100))
+	snake.position = Vector2(400 + (randf() * 400), 400 + (randf() * 400))
 	EnemiesNode.add_child(snake)
 	
 func _on_enemy_spawn_timer_timeout():

@@ -30,4 +30,3 @@ func _process(_delta):
 func _on_body_entered(body):
 	hit.emit()
 	print("I'M HIT AOFHASIPDFUHSIOFGUOAIGHB")
-	get_tree().change_scene_to_file("res://game_over.tscn")

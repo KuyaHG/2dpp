@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bk2hlgkvgiads" path="res://Snake animation 2.png" id="2_k1tjr"]
 [ext_resource type="Script" path="res://snake_enemy.gd" id="3_nnbqg"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_o2c8g"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uuqkt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -15,22 +15,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"wiggle wiggle",
-"speed": 10.0
+"speed": 100.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q8ehi"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rtn40"]
 radius = 4.0
 height = 46.0
 
-[node name="snake_enemy" type="Area2D"]
+[node name="snake_enemy" type="RigidBody2D"]
 script = ExtResource("3_nnbqg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_o2c8g")
+sprite_frames = SubResource("SpriteFrames_uuqkt")
 animation = &"wiggle wiggle"
-frame_progress = 0.273657
+frame_progress = 0.333333
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 2)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_q8ehi")
+shape = SubResource("CapsuleShape2D_rtn40")

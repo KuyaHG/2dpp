@@ -12,7 +12,7 @@ func _ready():
 func _process(delta):
 	#We want to get the player's position
 	#We want to move towards the player using a vector/line pathing
-	pass
+	target = player.global_position
 
 
 	
