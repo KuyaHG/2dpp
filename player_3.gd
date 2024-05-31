@@ -39,5 +39,5 @@ func _process(_delta):
 		pass
 
 func _on_body_entered(_body):
-	hit.emit()
+	# hit.emit()
 	print("I'M HIT AOFHASIPDFUHSIOFGUOAIGHB")

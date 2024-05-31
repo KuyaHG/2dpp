@@ -27,7 +27,7 @@ extends Node
 #When snake dies numSnakesKilled increases
 #When NumSnakesKilled==WaveNumSnakes transition to win screen
 
-	
+
 
 var EnemiesNode
 var NumWaveEnemies
@@ -37,8 +37,8 @@ var NumberOfEnemiesKilled
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	NumWaveEnemies=10
-	MaxEnemiesOnScreen=2
+	NumWaveEnemies=20
+	MaxEnemiesOnScreen=20
 	NumberOfEnemiesKilled=0
 	EnemiesNode = $Enemies
 
@@ -63,6 +63,7 @@ func spawn_enemy():
 	snake.position = Vector2(400 + (randf() * 400), 400 + (randf() * 400))
 
 	snake.follow_player($"player 3")
+	snake.apply_scale(Vector2(2,2)) # big for a second?
 
 	EnemiesNode.add_child(snake)
 	
