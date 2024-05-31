@@ -30,13 +30,13 @@ func _process(_delta):
 	position = position.clamp(Vector2.ZERO, screen_size)
 	#bullets
 	if Input.is_action_pressed("Shoot U"):
-		
+		pass
 	if Input.is_action_pressed("Shoot L"):
-		
+		pass
 	if Input.is_action_pressed("Shoot D"):
-		
+		pass
 	if Input.is_action_pressed("Shoot R"):
-		
+		pass
 
 func _on_body_entered(body):
 	hit.emit()

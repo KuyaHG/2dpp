@@ -25,7 +25,7 @@ extends Node
 
 #When snake dies numSnakesKilled increases
 #When NumSnakesKilled==WaveNumSnakes transition to win screen
-var player_pos = get_parent().get_node("player 3")
+
 	
 
 var EnemiesNode
