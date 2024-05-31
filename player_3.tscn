@@ -1,17 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://i4yu2wbfroqt"]
+[gd_scene load_steps=10 format=3 uid="uid://i4yu2wbfroqt"]
 
 [ext_resource type="Script" path="res://player_3.gd" id="1_70vdy"]
-[ext_resource type="Texture2D" uid="uid://bn2hrr18lxp4b" path="res://pixil-frame-0.png" id="2_ilivw"]
 [ext_resource type="PackedScene" uid="uid://didydaa7tvqub" path="res://bullet_up.tscn" id="2_stlpg"]
 [ext_resource type="PackedScene" uid="uid://do2thf2ngueac" path="res://bullet_left.tscn" id="3_4nuq8"]
 [ext_resource type="PackedScene" uid="uid://4x423w4folwf" path="res://bullet_down.tscn" id="4_asqip"]
 [ext_resource type="PackedScene" uid="uid://cku2nn5e177ke" path="res://bullet_right.tscn" id="5_u10qh"]
+[ext_resource type="Texture2D" uid="uid://cxafhlvackl7x" path="res://cowboy-base-back-duck.png" id="6_6nnfq"]
+[ext_resource type="Texture2D" uid="uid://c1akspb4h6i5m" path="res://Cowboy base front.png" id="7_bcs08"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nsgyr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ilivw")
+"texture": ExtResource("6_6nnfq")
+}],
+"loop": true,
+"name": &"Back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bcs08")
 }],
 "loop": true,
 "name": &"Default",
@@ -31,9 +40,9 @@ bullet_down_scene = ExtResource("4_asqip")
 bullet_right_scene = ExtResource("5_u10qh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_nsgyr")
-animation = &"Default"
+animation = &"Back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)

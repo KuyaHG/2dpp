@@ -32,6 +32,10 @@ func _process(_delta):
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+	if velocity.y < -1:
+		$AnimatedSprite.Animation = "Back"
+	if velocity.y > 1:
+		$AnimatedSprite.Animation =  "Default"
 	#player clamp
 		position += velocity * _delta
 	position = position.clamp(Vector2.ZERO, screen_size)

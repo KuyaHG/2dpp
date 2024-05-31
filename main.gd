@@ -35,7 +35,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#if Input.is_action_pressed("W"):
 		#get_tree().change_scene_to_file("res://Player 2.0.tscn")
 	if NumEnemiesSpawned - EnemiesNode.get_child_count() == NumWaveEnemies:
