@@ -3,7 +3,8 @@ extends Node
 #THINGS TO DO
 #*Game over screen
 #*Game over screen restart button
-#Snake collision with player transitions to game over
+#*Snake collision with player
+#  transitions to game over
 
 #*Game start screen
 #*Game start button
@@ -12,7 +13,7 @@ extends Node
 
 #*Snakes are created at different positions --Go over with dad
 
-#Snakes move towards player
+#*Snakes move towards player
 
 #Player can spawn bullets
 #Bullets move
@@ -60,6 +61,9 @@ func spawn_enemy():
 	print ("Spawn Snake")
 	var snake = snake_enemy_scene.instantiate()
 	snake.position = Vector2(400 + (randf() * 400), 400 + (randf() * 400))
+
+	snake.follow_player($"player 3")
+
 	EnemiesNode.add_child(snake)
 	
 func _on_enemy_spawn_timer_timeout():
