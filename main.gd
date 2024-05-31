@@ -27,12 +27,13 @@ extends Node
 #*When snake dies numSnakesKilled increases
 #*When NumSnakesKilled==WaveNumSnakes transition to win screen
 
-
+var screen_size
 
 var EnemiesNode
 var NumWaveEnemies
 var MaxEnemiesOnScreen
 var NumEnemiesSpawned
+var player
 
 
 # Called when the node enters the scene tree for the first time.
@@ -41,6 +42,9 @@ func _ready():
 	MaxEnemiesOnScreen=20
 	NumEnemiesSpawned=0
 	EnemiesNode = $Enemies
+	screen_size = $Background.get_viewport_rect().size
+	player = $"player 3"
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -59,10 +63,16 @@ func _on_shop_button_button_down():
 func spawn_enemy():
 	# print ("Spawn Snake")
 	NumEnemiesSpawned += 1
-	var snake = snake_enemy_scene.instantiate()
-	snake.position = Vector2(400 + (randf() * 400), 400 + (randf() * 400))
+	var spawn_position = Vector2(randf() * screen_size.x, randf() * screen_size.y)
 
-	snake.follow_player($"player 3")
+	# Don't let snakes spawn on top of the player
+	while spawn_position.x > player.position.x - 100 and spawn_position.x < player.position.x + 100 and spawn_position.y > player.position.y - 100 and spawn_position.y < player.position.y + 100:
+		spawn_position = Vector2(randf() * screen_size.x, randf() * screen_size.y)
+
+	var snake = snake_enemy_scene.instantiate()
+	snake.position = spawn_position
+
+	snake.follow_player(player)
 	snake.apply_scale(Vector2(2,2)) # big for a second?
 
 	EnemiesNode.add_child(snake)
