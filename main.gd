@@ -27,7 +27,6 @@ extends Node
 #When NumSnakesKilled==WaveNumSnakes transition to win screen
 
 var EnemiesNode
-
 var NumWaveEnemies
 var MaxEnemiesOnScreen
 var NumberOfEnemiesKilled

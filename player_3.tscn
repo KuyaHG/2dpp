@@ -1,10 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://i4yu2wbfroqt"]
+[gd_scene load_steps=5 format=3 uid="uid://i4yu2wbfroqt"]
 
 [ext_resource type="Script" path="res://player_3.gd" id="1_70vdy"]
+[ext_resource type="Texture2D" uid="uid://bn2hrr18lxp4b" path="res://pixil-frame-0.png" id="2_ilivw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nsgyr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ilivw")
+}],
+"loop": true,
+"name": &"Default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ifi7n"]
+radius = 17.0
+height = 82.0
 
 [node name="player 3" type="Area2D"]
+position = Vector2(400, 400)
 script = ExtResource("1_70vdy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_nsgyr")
+animation = &"Default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(400, 409)
+shape = SubResource("CapsuleShape2D_ifi7n")
