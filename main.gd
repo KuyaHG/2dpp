@@ -4,7 +4,7 @@ extends Node
 #*Game over screen
 #*Game over screen restart button
 #*Snake collision with player
-#  transitions to game over
+#*transitions to game over
 
 #*Game start screen
 #*Game start button
