@@ -38,6 +38,6 @@ func _process(_delta):
 	if Input.is_action_pressed("Shoot R"):
 		pass
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	hit.emit()
 	print("I'M HIT AOFHASIPDFUHSIOFGUOAIGHB")

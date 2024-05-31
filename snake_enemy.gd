@@ -1,11 +1,12 @@
-extends AnimatedSprite2D
+extends RigidBody2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#We want to either set a random place for the snake to spawn
 	#or set an order of how many they needed to spawn in a place
-	autoplay = "wiggle wiggle"
+	#var mob_types = $AnimatedSprite2D.sprite_frames
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

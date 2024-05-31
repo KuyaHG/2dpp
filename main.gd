@@ -20,8 +20,8 @@ extends Node
 #Bullet collision with snake kills snake
 #Bullet collision with snake kills bullet
 
-#Create win screen
-#Win Screen reset button transitions to start screen
+#*Create win screen
+#*Win Screen reset button transitions to start screen
 
 #When snake dies numSnakesKilled increases
 #When NumSnakesKilled==WaveNumSnakes transition to win screen
@@ -46,7 +46,7 @@ func _process(delta):
 	#if Input.is_action_pressed("W"):
 		#get_tree().change_scene_to_file("res://Player 2.0.tscn")
 	if NumberOfEnemiesKilled == NumWaveEnemies:
-		print ("You win!")
+		get_tree().change_scene_to_file("res://game_win.tscn")
 	
 
 func _on_shop_button_button_down():

@@ -163,8 +163,8 @@ z_index = 100
 anchors_preset = -1
 anchor_right = 1.002
 anchor_bottom = 1.0
-offset_right = 6309.6
-offset_bottom = 6300.0
+offset_right = 7912.8
+offset_bottom = 7900.0
 texture = ExtResource("3_ex6oc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -186,8 +186,8 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 200000.0
-offset_right = 208401.0
-offset_bottom = 4953.0
+offset_right = 209601.0
+offset_bottom = 5661.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
