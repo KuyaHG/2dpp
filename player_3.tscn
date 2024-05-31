@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://i4yu2wbfroqt"]
+[gd_scene load_steps=9 format=3 uid="uid://i4yu2wbfroqt"]
 
 [ext_resource type="Script" path="res://player_3.gd" id="1_70vdy"]
 [ext_resource type="Texture2D" uid="uid://bn2hrr18lxp4b" path="res://pixil-frame-0.png" id="2_ilivw"]
+[ext_resource type="PackedScene" uid="uid://didydaa7tvqub" path="res://bullet_up.tscn" id="2_stlpg"]
+[ext_resource type="PackedScene" uid="uid://do2thf2ngueac" path="res://bullet_left.tscn" id="3_4nuq8"]
+[ext_resource type="PackedScene" uid="uid://4x423w4folwf" path="res://bullet_down.tscn" id="4_asqip"]
+[ext_resource type="PackedScene" uid="uid://cku2nn5e177ke" path="res://bullet_right.tscn" id="5_u10qh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nsgyr"]
 animations = [{
@@ -21,6 +25,10 @@ height = 82.0
 [node name="player 3" type="Area2D"]
 position = Vector2(400, 400)
 script = ExtResource("1_70vdy")
+bullet_up_scene = ExtResource("2_stlpg")
+bullet_left_scene = ExtResource("3_4nuq8")
+bullet_down_scene = ExtResource("4_asqip")
+bullet_right_scene = ExtResource("5_u10qh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.1, 0.1)
@@ -30,5 +38,7 @@ animation = &"Default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_ifi7n")
+
+[node name="BulletsNode" type="Node" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

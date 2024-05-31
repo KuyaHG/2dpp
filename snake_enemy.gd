@@ -30,6 +30,8 @@ func _process(_delta):
 func _integrate_forces(state):
 	state.apply_force(dir)
 
+func die():
+	get_parent().remove_child(self)
 
 func follow_player(player_to_follow):
 	player = player_to_follow
