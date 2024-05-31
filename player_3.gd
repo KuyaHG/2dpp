@@ -24,8 +24,15 @@ func _process(_delta):
 	#player clamp
 		position += velocity * _delta
 	position = position.clamp(Vector2.ZERO, screen_size)
-	
-
+	#bullets
+	if Input.is_action_pressed("Shoot U"):
+		
+	if Input.is_action_pressed("Shoot L"):
+		
+	if Input.is_action_pressed("Shoot D"):
+		
+	if Input.is_action_pressed("Shoot R"):
+		
 
 func _on_body_entered(body):
 	hit.emit()

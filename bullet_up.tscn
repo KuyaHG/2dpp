@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://didydaa7tvqub"]
+
+[ext_resource type="Texture2D" uid="uid://cvk5du23pefpq" path="res://Bullet Up.png" id="1_kt5ho"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t0n3s"]
+radius = 7.0
+
+[node name="Bullet Up" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t0n3s")
+
+[node name="Bullet Up" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kt5ho")

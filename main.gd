@@ -47,7 +47,7 @@ func _process(delta):
 		#get_tree().change_scene_to_file("res://Player 2.0.tscn")
 	if NumberOfEnemiesKilled == NumWaveEnemies:
 		print ("You win!")
-
+	
 
 func _on_shop_button_button_down():
 	#get_tree().change_scene_to_file("res://shop.tscn")

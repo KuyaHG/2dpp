@@ -10,9 +10,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#We want to get the player's position
+	#We want to get the player's position via vector EVERY FRAME
 	#We want to move towards the player using a vector/line pathing
-	target = player.global_position
+	
 
 
 	
