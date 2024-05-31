@@ -1,4 +1,8 @@
 extends Area2D
+@export var bullet_up_scene:PackedScene
+@export var bullet_left_scene:PackedScene
+@export var bullet_down_scene:PackedScene
+@export var bullet_right_scene:PackedScene
 var speed = 400
 var screen_size
 signal hit
