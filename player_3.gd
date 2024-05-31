@@ -1,6 +1,7 @@
 extends Area2D
 var speed = 400
 var screen_size
+signal hit
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -24,3 +25,9 @@ func _process(_delta):
 		position += velocity * _delta
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
+
+
+func _on_body_entered(body):
+	hit.emit()
+	print("I'M HIT AOFHASIPDFUHSIOFGUOAIGHB")
+	get_tree().change_scene_to_file("res://game_over.tscn")

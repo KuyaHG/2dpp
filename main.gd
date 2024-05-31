@@ -57,7 +57,7 @@ func _on_shop_button_button_down():
 func spawn_enemy():
 	print ("Spawn Snake")
 	var snake = snake_enemy_scene.instantiate()
-	snake.position = Vector2(100 + (randf() * 100), 100 + (randf() * 100))
+	snake.position = Vector2(200 + (randf() * 200), 100 + (randf() * 100))
 	EnemiesNode.add_child(snake)
 	
 func _on_enemy_spawn_timer_timeout():

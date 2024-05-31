@@ -28,5 +28,7 @@ sprite_frames = SubResource("SpriteFrames_nsgyr")
 animation = &"Default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(400, 409)
+position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_ifi7n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
