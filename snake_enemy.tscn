@@ -18,9 +18,9 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4y2e"]
-radius = 6.47059
-height = 44.9412
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpagt"]
+radius = 0.0411765
+height = 0.445098
 
 [node name="Snake enemy" type="AnimatedSprite2D"]
 position = Vector2(23.2, 23.2)
@@ -30,7 +30,10 @@ animation = &"wiggle wiggle"
 frame_progress = 0.46555
 script = ExtResource("3_nnbqg")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0)
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-3, 2)
+scale = Vector2(100, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_c4y2e")
+shape = SubResource("CapsuleShape2D_bpagt")

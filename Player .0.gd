@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+signal hit
 const SPEED = 250
 var screen_size
 
@@ -7,6 +7,7 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	motion_mode = CharacterBody2D.MOTION_MODE_FLOATING
 	print("Breaking Bad Reference")
+	show()
 
 func _physics_process(delta):
 	# var velocity = Vector2.ZERO
@@ -26,3 +27,9 @@ func _physics_process(delta):
 		velocity.x = 0
 	move_and_slide()
 
+
+
+func _on_area_2d_body_entered(body):
+	hit.emit()
+	hide()
+	print ("HITHITHITOWOWOWOW")
