@@ -163,8 +163,9 @@ z_index = 100
 anchors_preset = -1
 anchor_right = 1.002
 anchor_bottom = 1.0
-offset_right = 7912.8
-offset_bottom = 7900.0
+offset_right = 7198.4
+offset_bottom = 7200.0
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_ex6oc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

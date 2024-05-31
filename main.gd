@@ -1,32 +1,20 @@
 extends Node
 @export var snake_enemy_scene:PackedScene
 #THINGS TO DO
-#*Game over screen
-#*Game over screen restart button
-#*Snake collision with player
-#*transitions to game over
+#Fix the shop button's graphics
+#Get the button to change scenes to the shop
 
-#*Game start screen
-#*Game start button
-#*Start game on start screen
-#*Change game over button to start screen (not main)
+#Get one upgrade (winchester rifle)
+#Make it so when you hover over the upgrade, it says what it does
+#Code the upgrade
+#Get the other upgrades done, repeating the process listed above
 
-#*Snakes are created at different positions --Go over with dad
-
-#*Snakes move towards player
-
-#*Player can spawn bullets
-#*Bullets move
-#*Bullet leaves screen and is deleted
-#*Bullet collision with snake kills snake
-#*Bullet collision with snake kills bullet
-
-#*Create win screen
-#*Win Screen reset button transitions to start screen
-
-#*When snake dies numSnakesKilled increases
-#*When NumSnakesKilled==WaveNumSnakes transition to win screen
-
+#Get it so when you kill 20 snakes, it changes scene to the boss
+#Make the boss
+#Make the boss go towards the player
+#Make the boss shoot bullets (interpret this how you would like)
+#Make it so when the boss touches you, transition to game_over
+#
 var screen_size
 
 var EnemiesNode
