@@ -29,13 +29,15 @@ func _process(_delta):
 		velocity.y += 1
 	if Input.is_action_pressed("W"):
 		velocity.y -= 1
-		
+#Animations
+	if velocity.y < 0:
+		$AnimatedSprite2D.animation = "Back"
+	if velocity.y > 0:
+		$AnimatedSprite2D.animation = "Default"
+	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
-	if velocity.y < -1:
-		$AnimatedSprite.Animation = "Back"
-	if velocity.y > 1:
-		$AnimatedSprite.Animation =  "Default"
+
 	#player clamp
 		position += velocity * _delta
 	position = position.clamp(Vector2.ZERO, screen_size)

@@ -42,7 +42,7 @@ bullet_right_scene = ExtResource("5_u10qh")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.07, 0.07)
 sprite_frames = SubResource("SpriteFrames_nsgyr")
-animation = &"Back"
+animation = &"Default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
