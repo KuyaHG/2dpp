@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://m4e2xyubono5"]
+
+[ext_resource type="Script" path="res://boss.gd" id="1_4r0by"]
+
+[node name="boss" type="RigidBody2D"]
+script = ExtResource("1_4r0by")
