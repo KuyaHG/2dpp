@@ -26,7 +26,7 @@ var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	NumWaveEnemies=30
+	NumWaveEnemies=3
 	MaxEnemiesOnScreen=20
 	NumEnemiesSpawned=0
 	EnemiesNode = $Enemies
@@ -39,7 +39,7 @@ func _process(_delta):
 	#if Input.is_action_pressed("W"):
 		#get_tree().change_scene_to_file("res://Player 2.0.tscn")
 	if NumEnemiesSpawned - EnemiesNode.get_child_count() == NumWaveEnemies:
-		get_tree().change_scene_to_file("res://boss.tscn")
+		get_tree().change_scene_to_file("res://boss_arena.tscn")
 	
 
 func _on_shop_button_button_down():
