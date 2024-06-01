@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var player
-
+var NumEnemiesKilled
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#We want to either set a random place for the snake to spawn
@@ -32,6 +32,6 @@ func _integrate_forces(state):
 
 func die():
 	get_parent().remove_child(self)
-
+	NumEnemiesKilled += 1
 func follow_player(player_to_follow):
 	player = player_to_follow

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://m4e2xyubono5"]
+[gd_scene load_steps=6 format=3 uid="uid://m4e2xyubono5"]
 
 [ext_resource type="Script" path="res://boss.gd" id="1_4r0by"]
+[ext_resource type="PackedScene" uid="uid://i4yu2wbfroqt" path="res://player_3.tscn" id="2_5l26o"]
 [ext_resource type="Texture2D" uid="uid://2y31qn1rncek" path="res://boss (this is terrifying wtfricccckkkk).webp" id="2_d2d5y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cwh5x"]
@@ -19,16 +20,16 @@ animations = [{
 }]
 
 [node name="boss" type="RigidBody2D"]
-position = Vector2(400, 90)
-scale = Vector2(0.15, 0.15)
-mass = 1000.0
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_4r0by")
+player_3_scene = ExtResource("2_5l26o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 108)
+position = Vector2(0, 20)
+scale = Vector2(0.15, 0.15)
 shape = SubResource("CapsuleShape2D_cwh5x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_7bbmc")
