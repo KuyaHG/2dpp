@@ -1,7 +1,7 @@
 extends Node
 @export var snake_enemy_scene:PackedScene
 #THINGS TO DO
-#Fix the shop button's graphics
+#*Fix the shop button's graphics
 #Get the button to change scenes to the shop
 
 #Get one upgrade (winchester rifle)
@@ -43,10 +43,10 @@ func _process(_delta):
 	
 
 func _on_shop_button_button_down():
-	#get_tree().change_scene_to_file("res://shop.tscn")
-	var Enemy_Count = EnemiesNode.get_child_count()
-	if (Enemy_Count > 0):
-		EnemiesNode.remove_child(EnemiesNode.get_child(0))
+	get_tree().change_scene_to_file("res://shop.tscn")
+	#var Enemy_Count = EnemiesNode.get_child_count()
+	#if (Enemy_Count > 0):
+		#EnemiesNode.remove_child(EnemiesNode.get_child(0))
 
 func spawn_enemy():
 	# print ("Spawn Snake")
