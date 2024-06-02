@@ -16,7 +16,7 @@ extends Node
 #*Make the boss go towards the player
 #*Make it so when the boss touches you, transition to game_over
 #*Make a velocity cap for the boss, or a clamp
-#Make the boss have more hp
+#*Make the boss have more hp
 
 #Make the rage mode scene
 #Make the input for rage mode
@@ -27,37 +27,33 @@ var screen_size
 
 var EnemiesNode
 var BossesNode
-var NumWaveEnemies
-var NumWaveBosses
-var MaxEnemiesOnScreen
-var MaxBossesOnScreen
-var NumEnemiesSpawned
-var NumBossesSpawned
-var NumEnemiesKilled
-var NumBossesKilled
 var player
 var boss_wave
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	NumWaveEnemies=3
-	NumWaveBosses=1
-	MaxEnemiesOnScreen=20
-	MaxBossesOnScreen=1
-	NumEnemiesSpawned=0
-	NumBossesSpawned=0
-	NumEnemiesKilled=0
-	NumBossesKilled=0
 	EnemiesNode = $Enemies
 	BossesNode = $Bosses
 	screen_size = $Background.get_viewport_rect().size
 	player = $"player 3"
+	
+	var enemiesToSpawn = Global.NumEnemiesSpawned - Global.NumEnemiesKilled
+	var bossesToSpawn =  Global.NumBossesSpawned - Global.NumBossesKilled
+	
+	for i in enemiesToSpawn:
+		print ("spawning enemy {i}".format({"i": i}))
+		spawn_enemy(true)
+
+	for i in bossesToSpawn:
+		print ("spawning boss {i}".format({"i": i}))
+		spawn_boss(true)
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	#if Input.is_action_pressed("W"):
 		#get_tree().change_scene_to_file("res://Player 2.0.tscn")
-	if NumEnemiesSpawned - EnemiesNode.get_child_count() == NumWaveEnemies:
+	if Global.NumEnemiesSpawned - EnemiesNode.get_child_count() == Global.NumWaveEnemies:
 		pass
 	
 
@@ -67,9 +63,11 @@ func _on_shop_button_button_down():
 	#if (Enemy_Count > 0):
 		#EnemiesNode.remove_child(EnemiesNode.get_child(0))
 
-func spawn_enemy():
+func spawn_enemy(skip_count = false):
 	# print ("Spawn Snake")
-	NumEnemiesSpawned += 1
+	if !skip_count:
+		Global.NumEnemiesSpawned += 1
+
 	var spawn_position = Vector2(randf() * screen_size.x, randf() * screen_size.y)
 
 	# Don't let snakes spawn on top of the player
@@ -87,9 +85,11 @@ func spawn_enemy():
 	EnemiesNode.add_child(snake)
 
 
-func spawn_boss():
+func spawn_boss(skip_count = false):
 	print ("Spawn Boss")
-	NumBossesSpawned += 1
+	if !skip_count:
+		Global.NumBossesSpawned += 1
+
 	var spawn_position_1 = Vector2(400, 90)
 	var spawn_position_2 = Vector2(400, screen_size.y - 180)
 	var spawn_position
@@ -112,20 +112,20 @@ func spawn_boss():
 
 func enemy_died():
 	print ("Main sees that an enemy died")
-	NumEnemiesKilled += 1
+	Global.NumEnemiesKilled += 1
 
 func boss_died():
 	print ("Main sees that a boss died")
-	NumBossesKilled += 1
+	Global.NumBossesKilled += 1
 
 func _on_enemy_spawn_timer_timeout():
 	# print ("Checking to spawn enemies...")
 	var Enemy_Count = EnemiesNode.get_child_count()
-	if Enemy_Count < MaxEnemiesOnScreen and NumEnemiesSpawned < NumWaveEnemies:
+	if Enemy_Count < Global.MaxEnemiesOnScreen and Global.NumEnemiesSpawned < Global.NumWaveEnemies:
 		spawn_enemy()
 
 	var Boss_Count = BossesNode.get_child_count()
-	if Boss_Count < MaxBossesOnScreen and NumBossesSpawned < NumWaveBosses and NumEnemiesKilled > 2:
+	if Boss_Count < Global.MaxBossesOnScreen and Global.NumBossesSpawned < Global.NumWaveBosses and Global.NumEnemiesKilled > 2:
 		boss_wave = true
 		spawn_boss()
 

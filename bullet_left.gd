@@ -17,5 +17,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	body.take_damage()
-	queue_free()
+	if !Global.piercing_upgrade:
+		queue_free()
 	
