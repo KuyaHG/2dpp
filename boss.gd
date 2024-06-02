@@ -51,7 +51,7 @@ func take_damage():
 		print ("Boss is killed!")
 		if main_scene != null:
 			main_scene.boss_died()
-		get_tree().change_scene_to_file("res://game_win.tscn")
+		
 		queue_free()
 	else:
 		print ("Boss is hurt!")
