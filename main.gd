@@ -113,14 +113,6 @@ func spawn_boss(skip_count = false):
 
 	BossesNode.add_child(boss)
 
-func enemy_died():
-	print ("Main sees that an enemy died")
-	Global.NumEnemiesKilled += 1
-
-func boss_died():
-	print ("Main sees that a boss died")
-	Global.NumBossesKilled += 1
-
 func _on_enemy_spawn_timer_timeout():
 	# print ("Checking to spawn enemies...")
 	var Enemy_Count = EnemiesNode.get_child_count()

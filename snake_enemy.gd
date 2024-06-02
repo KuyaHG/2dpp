@@ -33,9 +33,7 @@ func _integrate_forces(state):
 
 func take_damage(damage):
 	#print ("I am snek and I die")
-	if main_scene != null:
-		main_scene.enemy_died()
-
+	Global.enemy_died()
 	queue_free()
 
 func follow_player(player_to_follow):

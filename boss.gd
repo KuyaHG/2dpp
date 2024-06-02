@@ -32,9 +32,7 @@ func take_damage(damage):
 	
 	if hp <= 0:
 		print ("Boss is killed!")
-		if main_scene != null:
-			main_scene.boss_died()
-		get_tree().change_scene_to_file.bind("res://game_win.tscn").call_deferred()
+		Global.boss_died()
 		call_deferred('free')
 	else:
 		print ("Boss is hurt!")
