@@ -22,7 +22,10 @@ extends Node
 #Make the input for rage mode
 #Get rage mode to change the speed variable for player
 #Get rage mode to change the damage bullets do
-signal Boss_Spawn
+
+#Ideas
+#punishment for accessing the shop: speed go nyooooooooooom
+
 var screen_size
 
 var EnemiesNode

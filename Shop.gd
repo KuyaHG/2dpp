@@ -16,7 +16,7 @@ func _on_timer_timeout():
 
 
 func _on_piercing_upgrade_button_down():
-	Global.buy_piercing_upgrade()
+	Global.buy_weapon(Global.WEAPON.RIFLE)
 
 
 func _on_back_button_button_down():

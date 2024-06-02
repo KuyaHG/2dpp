@@ -31,7 +31,7 @@ func _process(_delta):
 func _integrate_forces(state):
 	state.apply_force(dir)
 
-func take_damage():
+func take_damage(damage):
 	#print ("I am snek and I die")
 	if main_scene != null:
 		main_scene.enemy_died()

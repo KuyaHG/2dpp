@@ -6,7 +6,6 @@ extends Area2D
 var speed = 400
 var screen_size
 
-const COOLDOWN_TIME = 500
 var last_shot_time = 0
 var BulletsNode
 
@@ -43,7 +42,7 @@ func _process(_delta):
 	position = position.clamp(Vector2.ZERO, screen_size)
 	#bullets
 	var current_time = Time.get_ticks_msec()
-	if (current_time - last_shot_time > COOLDOWN_TIME):
+	if (current_time - last_shot_time > Global.weapon_cooldown()):
 		if Input.is_action_pressed("Shoot U"):
 			spawn_bullet_up()
 			last_shot_time = current_time

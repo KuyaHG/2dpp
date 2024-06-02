@@ -25,10 +25,10 @@ func follow_player(player_to_follow):
 func set_main_scene(scene):
 	main_scene = scene
 
-func take_damage():
+func take_damage(damage):
 	#print ("I am boss and I die")
 	
-	hp -= 1
+	hp -= damage
 	
 	if hp <= 0:
 		print ("Boss is killed!")
