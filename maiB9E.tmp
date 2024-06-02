@@ -10,7 +10,6 @@
 [node name="Main" type="Node"]
 script = ExtResource("1_bxtc3")
 snake_enemy_scene = ExtResource("8_kd4qk")
-boss_scene = ExtResource("6_prbdh")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(400, 400)
@@ -41,6 +40,8 @@ autostart = true
 [node name="player 3" parent="." instance=ExtResource("5_w3tj6")]
 
 [node name="snake_enemy" parent="." instance=ExtResource("8_kd4qk")]
+
+[node name="boss" parent="." instance=ExtResource("6_prbdh")]
 
 [node name="Bosses" type="Node" parent="."]
 

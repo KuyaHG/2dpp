@@ -21,10 +21,15 @@ signal Boss_Spawn
 var screen_size
 
 var EnemiesNode
+var BossesNode
 var NumWaveEnemies
+var NumWaveBosses
 var MaxEnemiesOnScreen
+var MaxBossesOnScreen
 var NumEnemiesSpawned
+var NumBossesSpawned
 var NumEnemiesKilled
+var NumBossesKilled
 var player
 var boss
 var boss_wave
@@ -32,16 +37,17 @@ var boss_wave
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	NumWaveEnemies=3
+	NumWaveBosses=1
 	MaxEnemiesOnScreen=20
+	MaxBossesOnScreen=1
 	NumEnemiesSpawned=0
+	NumBossesSpawned=0
 	NumEnemiesKilled=0
+	NumBossesKilled=0
 	EnemiesNode = $Enemies
+	BossesNode = $Bosses
 	screen_size = $Background.get_viewport_rect().size
 	player = $"player 3"
-	boss = $"boss"
-	
-	boss.position.x = -100
-	boss.position.y = -100
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -70,18 +76,52 @@ func spawn_enemy():
 	snake.position = spawn_position
 
 	snake.follow_player(player)
+	snake.set_main_scene(self)
+
 	snake.apply_scale(Vector2(2,2)) # big for a second?
 
 	EnemiesNode.add_child(snake)
-	
+
+
+func spawn_boss():
+	print ("Spawn Boss")
+	NumBossesSpawned += 1
+	var spawn_position_1 = Vector2(400, 90)
+	var spawn_position_2 = Vector2(400, screen_size.y - 180)
+	var spawn_position
+
+	# Don't let boss spawn on top of the player
+	if (player.position.y < screen_size.y / 2):
+		spawn_position = spawn_position_2
+	else:
+		spawn_position = spawn_position_1
+
+	var boss = boss_scene.instantiate()
+	boss.position = spawn_position
+
+	boss.follow_player(player)
+	boss.set_main_scene(self)
+
+	#boss.apply_scale(Vector2(2,2)) # big for a second?
+
+	BossesNode.add_child(boss)
+
+func enemy_died():
+	print ("Main sees that an enemy died")
+	NumEnemiesKilled += 1
+
+func boss_died():
+	print ("Main sees that a boss died")
+	NumBossesKilled += 1
+
 func _on_enemy_spawn_timer_timeout():
 	# print ("Checking to spawn enemies...")
 	var Enemy_Count = EnemiesNode.get_child_count()
 	if Enemy_Count < MaxEnemiesOnScreen and NumEnemiesSpawned < NumWaveEnemies:
 		spawn_enemy()
-	if NumEnemiesKilled > 2:
-		player.position.x = 400
-		player.position.y = 600
-		boss.position.x = 400
-		boss.position.y = 90
+
+	var Boss_Count = BossesNode.get_child_count()
+	if Boss_Count < MaxBossesOnScreen and NumBossesSpawned < NumWaveBosses and NumEnemiesKilled > 2:
 		boss_wave = true
+		spawn_boss()
+
