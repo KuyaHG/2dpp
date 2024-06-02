@@ -7,13 +7,14 @@ const BOSS_SPEED = 200
 var dir = Vector2(0,0)
 
 func _ready():
-	hp = 5
-
+	hp = 10
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if player != null:
 		var player_difference = player.position - position
 		dir = player_difference.normalized() * BOSS_SPEED
+	
 
 func _integrate_forces(state):
 	state.apply_force(dir)

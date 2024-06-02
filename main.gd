@@ -4,7 +4,7 @@ extends Node
 @export var boss_scene:PackedScene
 #THINGS TO DO
 #*Fix the shop button's graphics
-#Get the button to change scenes to the shop
+#*Get the button to change scenes to the shop
 
 #Get one upgrade (winchester rifle)
 #Make it so when you hover over the upgrade, it says what it does
@@ -13,10 +13,15 @@ extends Node
 
 #Get it so when you kill 20 snakes, it changes scene to the boss
 #*Make the boss
-#Make the boss go towards the player
-#Make the boss shoot bullets (interpret this how you would like)
-#Make it so when the boss touches you, transition to game_over
-#
+#*Make the boss go towards the player
+#*Make it so when the boss touches you, transition to game_over
+#*Make a velocity cap for the boss, or a clamp
+#Make the boss have more hp
+
+#Make the rage mode scene
+#Make the input for rage mode
+#Get rage mode to change the speed variable for player
+#Get rage mode to change the damage bullets do
 signal Boss_Spawn
 var screen_size
 
