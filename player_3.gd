@@ -78,5 +78,4 @@ func spawn_bullet_right():
 	BulletsNode.add_child(bullet)
 
 func _on_body_entered(_body):
-	get_tree().change_scene_to_file("res://game_over.tscn")
-	pass
+	get_tree().change_scene_to_file.bind("res://game_over.tscn").call_deferred()

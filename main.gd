@@ -31,7 +31,6 @@ var NumBossesSpawned
 var NumEnemiesKilled
 var NumBossesKilled
 var player
-var boss
 var boss_wave
 
 # Called when the node enters the scene tree for the first time.
