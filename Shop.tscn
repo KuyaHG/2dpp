@@ -1,10 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cp2d6n32652ka"]
+[gd_scene load_steps=10 format=3 uid="uid://cp2d6n32652ka"]
 
 [ext_resource type="Script" path="res://Shop.gd" id="1_nfkvx"]
 [ext_resource type="Theme" uid="uid://bi3y60qv3a0us" path="res://Button.tres" id="2_vj7ns"]
 [ext_resource type="Texture2D" uid="uid://clv6xxt0380lk" path="res://Shop2.png" id="3_ex6oc"]
-[ext_resource type="PackedScene" uid="uid://q2a0pqftgabt" path="res://Player 2.0.tscn" id="4_bw30l"]
-[ext_resource type="Texture2D" uid="uid://bw54wnqs1x1fh" path="res://tiles 1-3.png" id="5_onmjr"]
 
 [sub_resource type="Animation" id="Animation_d6vt1"]
 resource_name = "ButtonPressed"
@@ -143,28 +141,12 @@ _data = {
 "Start": SubResource("Animation_b2o1e")
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7euhg"]
-texture = ExtResource("5_onmjr")
-texture_region_size = Vector2i(72, 72)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ynvva"]
-tile_size = Vector2i(72, 72)
-sources/2 = SubResource("TileSetAtlasSource_7euhg")
-
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_nfkvx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-process_mode = 3
-z_index = 100
-anchors_preset = -1
-anchor_right = 1.002
-anchor_bottom = 1.0
-offset_right = 9603.2
-offset_bottom = 9600.0
+offset_right = 8000.0
+offset_bottom = 8000.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_ex6oc")
 expand_mode = 1
@@ -194,16 +176,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Player" parent="." instance=ExtResource("4_bw30l")]
-
 [node name="Timer" type="Timer" parent="."]
 process_mode = 3
 one_shot = true
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_ynvva")
-format = 2
-layer_0/tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 0, 65537, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 196612, 2, 0, 196613, 2, 0, 262150, 2, 0, 262151, 2, 0, 196615, 2, 0, 196616, 2, 0, 131080, 2, 0, 262152, 2, 0, 65544, 2, 0, 8, 2, 0, 7, 2, 0, 65543, 2, 0, 65542, 2, 0, 131078, 2, 0, 131079, 2, 0, 131077, 2, 0, 196614, 2, 0, 262149, 2, 0, 262148, 2, 0, 262147, 2, 0, 262146, 2, 0, 262145, 2, 0, 262144, 2, 0, 196608, 2, 0, 131072, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 65541, 2, 0, 65540, 2, 0, 65539, 2, 0, 65538, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0)
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
@@ -218,7 +193,6 @@ offset_bottom = 329.65
 
 [node name="shopbutton" type="Button" parent="Control2"]
 process_mode = 3
-z_index = 2
 layout_mode = 0
 offset_left = 200000.0
 offset_right = 200080.0
@@ -227,7 +201,9 @@ scale = Vector2(1, 1.04141)
 theme = ExtResource("2_vj7ns")
 
 [node name="Piercing Upgrade" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 10.0
+offset_top = 611.0
+offset_right = 117.0
+offset_bottom = 718.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
