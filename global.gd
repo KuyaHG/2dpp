@@ -27,7 +27,14 @@ var Waves = [
 		'NumBosses': 2,
 		'MaxEnemiesOnScreen': 20,
 		'MaxBossesOnScreen': 1,
+	},
+		{
+		'NumEnemies': 40,
+		'NumBosses': 4,
+		'MaxEnemiesOnScreen': 20,
+		'MaxBossesOnScreen': 2,
 	}
+
 ]
 
 func start_wave():
@@ -83,6 +90,13 @@ func boss_died():
 	print ("Global sees that a boss died")
 	NumBossesKilled += 1
 	Money += 3
-
-	get_tree().change_scene_to_file.bind("res://game_win.tscn").call_deferred()
+	if NumBossesKilled == NumWaveBosses:
+		print (CurrentWaveNumber)
+		print (Waves.size() - 1)
+		if CurrentWaveNumber == Waves.size() - 1:
+			get_tree().change_scene_to_file.bind("res://game_win.tscn").call_deferred()
+		else:
+			CurrentWaveNumber += 1
+			get_tree().change_scene_to_file.bind("res://next_wave.tscn").call_deferred()
+		
 

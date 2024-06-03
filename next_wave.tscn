@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://do1ghxx4ytgps"]
+
+[ext_resource type="Script" path="res://next_wave.gd" id="1_5syqs"]
+
+[node name="Next_Wave" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Next wave"
+script = ExtResource("1_5syqs")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
