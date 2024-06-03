@@ -104,7 +104,7 @@ func spawn_enemy(skip_count = false):
 	var spawn_position = Vector2(randf() * screen_size.x, randf() * screen_size.y)
 
 	# Don't let snakes spawn on top of the player
-	while spawn_position.x > player.position.x - 100 and spawn_position.x < player.position.x + 100 and spawn_position.y > player.position.y - 100 and spawn_position.y < player.position.y + 100:
+	while spawn_position.x > player.position.x - 200 and spawn_position.x < player.position.x + 200 and spawn_position.y > player.position.y - 200 and spawn_position.y < player.position.y + 200:
 		spawn_position = Vector2(randf() * screen_size.x, randf() * screen_size.y)
 
 	var snake = snake_enemy_scene.instantiate()

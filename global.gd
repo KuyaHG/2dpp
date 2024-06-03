@@ -32,12 +32,23 @@ var Waves = [
 		'MaxBossesOnScreen': 1,
 	},
 		{
-		'NumEnemies': 40,
-		'NumBosses': 4,
+		'NumEnemies': 20,
+		'NumBosses': 2,
 		'MaxEnemiesOnScreen': 20,
 		'MaxBossesOnScreen': 2,
-	}
-
+	},
+		{
+		'NumEnemies': 35,
+		'NumBosses': 5,
+		'MaxEnemiesOnScreen': 25,
+		'MaxBossesOnScreen': 3,
+	},
+		{
+		'NumEnemies': 40,
+		'NumBosses': 8,
+		'MaxEnemiesOnScreen': 35,
+		'MaxBossesOnScreen': 4,
+	},
 ]
 
 func start_wave():
