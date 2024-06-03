@@ -11,7 +11,7 @@ func _ready():
 
 	pass
 
-const SNAKE_SPEED = 100
+var SNAKE_SPEED = (Global.shopentered * 100) + 100
 var dir = Vector2(0,0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,7 +31,7 @@ func _process(_delta):
 func _integrate_forces(state):
 	state.apply_force(dir)
 
-func take_damage(damage):
+func take_damage(_damage):
 	#print ("I am snek and I die")
 	Global.enemy_died()
 	queue_free()

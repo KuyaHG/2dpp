@@ -3,7 +3,7 @@ extends RigidBody2D
 var player
 var main_scene
 var hp
-const BOSS_SPEED = 200
+var boss_speed = (Global.shopentered * 50) + 200
 var dir = Vector2(0,0)
 
 func _ready():
@@ -13,7 +13,7 @@ func _ready():
 func _process(_delta):
 	if player != null:
 		var player_difference = player.position - position
-		dir = player_difference.normalized() * BOSS_SPEED
+		dir = player_difference.normalized() * boss_speed
 	
 
 func _integrate_forces(state):

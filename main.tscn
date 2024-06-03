@@ -1,11 +1,59 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2q8rvq54gsad"]
+[gd_scene load_steps=21 format=3 uid="uid://d2q8rvq54gsad"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_bxtc3"]
 [ext_resource type="Texture2D" uid="uid://dg26sd64ga0e1" path="res://Background png.png" id="1_hsono"]
 [ext_resource type="Theme" uid="uid://dvmwhy5ik2ywx" path="res://Shop_Button.tres" id="2_ut3ia"]
 [ext_resource type="PackedScene" uid="uid://i4yu2wbfroqt" path="res://player_3.tscn" id="5_w3tj6"]
 [ext_resource type="PackedScene" uid="uid://m4e2xyubono5" path="res://boss.tscn" id="6_prbdh"]
+[ext_resource type="Texture2D" uid="uid://bjtowf2thlltb" path="res://Rage 14.png" id="6_q4swn"]
+[ext_resource type="Texture2D" uid="uid://cbdmyiu17xjj1" path="res://Rage 24.png" id="7_j1yd8"]
+[ext_resource type="Texture2D" uid="uid://bnj33rn2pit0u" path="res://Rage 34.png" id="8_hc6gm"]
 [ext_resource type="PackedScene" uid="uid://bum871p40feqg" path="res://snake_enemy.tscn" id="8_kd4qk"]
+[ext_resource type="Texture2D" uid="uid://d0vi6yqyhofyy" path="res://Rage 04.png" id="9_xl7pb"]
+[ext_resource type="Texture2D" uid="uid://dg4hbialiqulv" path="res://rage full.png" id="10_sbw1a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4hofa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_q4swn")
+}],
+"loop": true,
+"name": &"1_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_j1yd8")
+}],
+"loop": true,
+"name": &"2_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hc6gm")
+}],
+"loop": true,
+"name": &"3_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_xl7pb")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_sbw1a")
+}],
+"loop": true,
+"name": &"full",
+"speed": 5.0
+}]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qnkpi"]
 rough = true
@@ -58,11 +106,20 @@ offset_bottom = 208.0
 grow_vertical = 2
 theme = ExtResource("2_ut3ia")
 
+[node name="Rage GUI" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(736, 776)
+scale = Vector2(1.28, 1.43919)
+sprite_frames = SubResource("SpriteFrames_4hofa")
+animation = &"full"
+
 [node name="Enemy_Spawn1" type="Node2D" parent="."]
 position = Vector2(800, 0)
 
 [node name="Enemy_Spawn_Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="Rage_duration_timer" type="Timer" parent="."]
+wait_time = 10.0
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -107,3 +164,4 @@ shape = SubResource("RectangleShape2D_5ed2s")
 
 [connection signal="button_down" from="UI/Shop button" to="." method="_on_shop_button_button_down"]
 [connection signal="timeout" from="Enemy_Spawn_Timer" to="." method="_on_enemy_spawn_timer_timeout"]
+[connection signal="timeout" from="Rage_duration_timer" to="." method="_on_rage_duration_timer_timeout"]

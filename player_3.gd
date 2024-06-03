@@ -3,7 +3,6 @@ extends Area2D
 @export var bullet_left_scene:PackedScene
 @export var bullet_down_scene:PackedScene
 @export var bullet_right_scene:PackedScene
-var speed = 400
 var screen_size
 
 var last_shot_time = 0
@@ -35,7 +34,7 @@ func _process(_delta):
 		$AnimatedSprite2D.animation = "Default"
 	
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+		velocity = velocity.normalized() * Global.speed
 
 	#player clamp
 		position += velocity * _delta

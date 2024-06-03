@@ -2,6 +2,9 @@ extends Node
 
 enum WEAPON {HANDGUN, RIFLE}
 
+var rage
+var rage_cooldown
+var speed
 var NumWaveEnemies
 var NumWaveBosses
 var MaxEnemiesOnScreen
@@ -12,8 +15,8 @@ var NumEnemiesKilled
 var NumBossesKilled
 var Weapon
 var Money
-
 var CurrentWaveNumber
+var shopentered
 
 var Waves = [
 	{
@@ -47,11 +50,14 @@ func start_wave():
 	NumBossesSpawned = 0
 	NumEnemiesKilled = 0
 	NumBossesKilled = 0
-
+	rage_cooldown = true
 func reset():
 	CurrentWaveNumber = 0
 	Weapon = WEAPON.HANDGUN
 	Money = 0
+	speed = 400
+	rage = false
+	shopentered = 0
 	start_wave()
 	
 func buy_weapon(weapon_to_buy):
@@ -99,4 +105,6 @@ func boss_died():
 			CurrentWaveNumber += 1
 			get_tree().change_scene_to_file.bind("res://next_wave.tscn").call_deferred()
 		
-
+func _process(_delta):
+	pass
+		

@@ -58,9 +58,39 @@ func _process(_delta):
 		#get_tree().change_scene_to_file("res://Player 2.0.tscn")
 	if Global.NumEnemiesSpawned - EnemiesNode.get_child_count() == Global.NumWaveEnemies:
 		pass
-	
-
+	if Input.is_action_pressed("Rage mode"):
+		if $"UI/Rage GUI".animation == "empty":
+			pass
+		if $"UI/Rage GUI".animation == "1_4":
+			if Global.rage_cooldown:
+				$"UI/Rage GUI".animation = "empty"
+				Global.speed = 600
+				Global.rage_cooldown = false
+				$Rage_duration_timer.start()
+				pass
+		if $"UI/Rage GUI".animation == "2_4":
+			if Global.rage_cooldown:
+				$"UI/Rage GUI".animation = "1_4"
+				Global.speed = 600
+				Global.rage_cooldown = false
+				$Rage_duration_timer.start()
+				pass
+		if $"UI/Rage GUI".animation == "3_4":
+			if Global.rage_cooldown:
+				$"UI/Rage GUI".animation = "2_4"
+				Global.speed = 600
+				Global.rage_cooldown = false
+				$Rage_duration_timer.start()
+				pass
+		if $"UI/Rage GUI".animation == "full":
+			if Global.rage_cooldown:
+				$"UI/Rage GUI".animation = "3_4"
+				Global.speed = 600
+				Global.rage_cooldown = false
+				$Rage_duration_timer.start()
+				pass
 func _on_shop_button_button_down():
+	Global.shopentered += 1
 	get_tree().change_scene_to_file("res://shop.tscn")
 	#var Enemy_Count = EnemiesNode.get_child_count()
 	#if (Enemy_Count > 0):
@@ -124,3 +154,12 @@ func _on_enemy_spawn_timer_timeout():
 		boss_wave = true
 		spawn_boss()
 
+
+
+func _on_rage_duration_timer_timeout():
+	if Global.rage:
+		Global.rage = false
+	Global.speed = 400
+	Global.rage_cooldown = true
+	print ("Rage timer out")
+	
